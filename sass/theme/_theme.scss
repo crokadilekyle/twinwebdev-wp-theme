@@ -1,0 +1,16 @@
+$mycolor: #7F5391;
+$secondarycolor: #537791;
+
+nav {
+    a {
+        color: $mycolor !important;
+        font-weight: 500;
+        &:hover {
+            color: $secondarycolor !important;
+        }
+    }
+}
+
+#main-nav {
+    background-color: #fff !important;
+}
