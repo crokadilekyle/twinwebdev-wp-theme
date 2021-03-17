@@ -2,15 +2,68 @@ $mycolor: #7F5391;
 $secondarycolor: #537791;
 
 nav {
-    a {
-        color: $mycolor !important;
-        font-weight: 500;
-        &:hover {
-            color: $secondarycolor !important;
-        }
-    }
+	a {
+		color: $mycolor !important;
+		font-weight: 500;
+
+		&:hover {
+			color: $secondarycolor !important;
+		}
+	}
 }
 
 #main-nav {
-    background-color: #fff !important;
+	background-color: #fff !important;
+}
+
+.wrapper#page-wrapper {
+	padding-top: 0;
+}
+
+.wrapper#wrapper-hero {
+	background-color: $mycolor;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+article.post.card {
+	display: flex;
+	flex-direction: column;
+	max-width: 50%;
+	padding: 2rem;
+	border: 1px solid $secondarycolor;
+	border-radius: 5px;
+
+	h2 {
+		font-size: 1.5rem !important;
+
+		a {
+			color: $secondarycolor;
+		}
+	}
+
+	.understrap-read-more-link-wrapper {
+		display: flex;
+		justify-content: center;
+
+		a {
+			background: $mycolor;
+			transition: background-color .2s ease-in-out;
+
+			&:hover {
+				background: $secondarycolor;
+				transition: background-color .2s ease-in-out;
+			}
+		}
+	}
+}
+
+
+#wrapper-footer {
+	background-image: linear-gradient(140deg, #9F67B7 0%, var(--e-global-color-af30157) 97%);
+	color: white;
+	text-align: center;
 }
