@@ -9,7 +9,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<article <?php post_class('card'); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class('twdcard'); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
 
@@ -20,13 +20,13 @@ defined( 'ABSPATH' ) || exit;
 		);
 		?>
 
-		<?php if ( 'post' == get_post_type() ) : ?>
+		<?php //if ( 'post' == get_post_type() ) : ?>
 
 			<!-- <div class="entry-meta">
 				<?php //understrap_posted_on(); ?>
 			</div>.entry-meta -->
 
-		<?php endif; ?>
+		<?php //endif; ?>
 
 	</header><!-- .entry-header -->
 

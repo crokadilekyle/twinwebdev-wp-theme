@@ -24,6 +24,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 <?php endif; ?>
 
 <div class="wrapper" id="index-wrapper">
+	<header class="twd-posts-index-header">
+		<?php if($post_type): ?>
+			<h1><?php echo ucwords($post_type); ?></h1>
+		<?php else: ?>
+			<h1><?php wp_title(''); ?></h1>
+		<?php endif; ?>
+	</header>
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
@@ -32,7 +39,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<!-- Do the left sidebar check and opens the primary div -->
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
 
-			<main class="site-main" id="main">
+			<main class="site-main twd-posts" id="main">
 
 				<?php if ( have_posts() ) : ?>
 

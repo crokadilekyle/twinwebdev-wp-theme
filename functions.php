@@ -41,3 +41,9 @@ function my_enqueue_theme_js() {
     true
   );
 }
+
+// Shorten excerpt max length
+function twinwebdev_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'twinwebdev_custom_excerpt_length', 999 );

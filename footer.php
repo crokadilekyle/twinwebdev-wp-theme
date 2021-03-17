@@ -27,9 +27,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="site-info">
 
-						<?php echo '&copy; '. date('Y') .' Kyle Merl' ?>
+						<p class="text-center">© <?php echo date('Y'); ?> Kyle Merl</p>
 
-					</div><!-- .site-info -->
+					</div><!--.site-info-->
 
 				</footer><!-- #colophon -->
 

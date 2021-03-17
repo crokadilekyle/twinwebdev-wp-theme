@@ -11,23 +11,37 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+	<header class="entry-header single">
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		<div class="entry-meta">
+		<!-- <div class="entry-meta">
 
 			<?php understrap_posted_on(); ?>
 
-		</div><!-- .entry-meta -->
+		</div>.entry-meta -->
 
 	</header><!-- .entry-header -->
+	
+	<div class="twd-single-post-container">
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+		<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+
+	</div>
 
 	<div class="entry-content">
 
 		<?php the_content(); ?>
+
+		<?php $project_url = get_post_meta($post->ID, 'url', true); 
+		
+		if ($project_url) { ?>
+
+			<a href="<?php echo $project_url; ?>">Visit Site</a>
+
+		<?php }
+
+		?>
 
 		<?php
 		wp_link_pages(
