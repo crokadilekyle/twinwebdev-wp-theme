@@ -13,9 +13,20 @@ $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
 <div class="wrapper" id="single-wrapper">
+	<header class="entry-header single">
+
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
+		<!-- <div class="entry-meta">
+
+			<?php understrap_posted_on(); ?>
+
+		</div>.entry-meta -->
+
+	</header><!-- .entry-header -->
 
 	<!-- <div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1"> -->
-	<div id="content" tabindex="-1">
+	<div class="container-fluid" id="content" tabindex="-1">
 
 		<div class="row">
 

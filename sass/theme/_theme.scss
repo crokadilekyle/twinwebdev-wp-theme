@@ -101,6 +101,11 @@ nav {
 	text-align: center;
 }
 
+.wp-post-image {
+	max-height: 315px;
+	object-fit: cover;
+}
+
 .entry-meta a {
 	color: whitesmoke;
 }
@@ -126,7 +131,7 @@ nav {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 400px;
+	max-width: 400px;
 	padding: 2rem;
 	border-radius: 5px;
 	box-shadow: 2px 4px 10px 0px rgba(159, 103, 183, .25);
@@ -135,6 +140,10 @@ nav {
 	.entry-header,
 	.entry-content {
 		margin: 1rem 0;
+	}
+
+	.entry-content p {
+		margin: 2rem 0;
 	}
 
 	h2 {
@@ -203,6 +212,25 @@ h3.widget-title {
 	height: 100%;
 }
 
+.twd-social-links {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+	min-width: 260px;
+	padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+	.twdcard {
+		width: 100%;
+	}
+
+	.twd-copyright {
+		margin-bottom: 3rem;
+	}
+}
+
 @media screen and (max-width: 991px) {
 	h1 {
 		font-size: 1.5rem;
@@ -210,14 +238,12 @@ h3.widget-title {
 
 	.site-main.twd-posts {
 		flex-direction: column;
-	}
-
-	.twdcard {
-		min-width: 100%;
+		align-items: center;
 	}
 
 	.twd-posts-index-header,
 	.entry-header.single {
 		height: 100px;
 	}
+
 }
