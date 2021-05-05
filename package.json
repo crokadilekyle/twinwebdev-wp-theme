@@ -28,7 +28,7 @@
   },
   "homepage": "https://understrap.com",
   "dependencies": {
-    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-env": "^7.14.1",
     "bootstrap": "^4.6.0",
     "browser-sync": "^2.26.14",
     "del": "^4.1.1",
@@ -41,7 +41,7 @@
     "gulp-imagemin": "^5.0.3",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4.0",
-    "gulp-replace": "^1.0.0",
+    "gulp-replace": "^1.1.2",
     "gulp-rimraf": "^0.2.2",
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
@@ -51,7 +51,7 @@
     "undescores-for-npm": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.10",
+    "@babel/core": "^7.14.0",
     "@wordpress/scripts": "^13.0.3",
     "autoprefixer": "^9.8.6",
     "gulp-babel": "^8.0.0",
