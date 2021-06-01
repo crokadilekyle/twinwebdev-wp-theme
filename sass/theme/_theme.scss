@@ -1,8 +1,27 @@
-$mycolor: rgb(127, 83, 145);
-$mycolorlighter: #AD81BF;
+$darkpurple: rgb(127, 83, 145);
+$lightpurple: #AD81BF;
+$lightblue: #537791;
+$darkblue: #234762;
 
-$secondarycolor: #537791;
-$secondarydarker: #234762;
+$breakpoint-tablet: 991px;
+
+@mixin screen-max($px) {
+	@media (max-width: $px) {
+		@content
+	}
+}
+
+;
+
+@mixin screen-range($max, $min) {
+	@media (max-width: $max) and (min-width: $min) {
+		@content
+	}
+}
+
+;
+
+
 
 @mixin defaultTransition($property) {
 	-webkit-transition: $property .2s ease-in-out;
@@ -10,6 +29,34 @@ $secondarydarker: #234762;
 	-ms-transition: $property .2s ease-in-out;
 	-o-transition: $property .2s ease-in-out;
 	transition: $property .2s ease-in-out;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+h1 {
+	@include screen-max($breakpoint-tablet) {
+		font-size: 1.5rem;
+	}
+}
+
+h2 {
+	@include screen-max($breakpoint-tablet) {
+		font-size: 1rem;
+	}
+}
+
+
+// Front Page Header
+.twd-front-page-header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 25vh;
+	background-image: linear-gradient(140deg, $lightblue 0%, $darkblue 97%);
+	text-align: center;
+	color: white;
 }
 
 // Navigation
@@ -20,11 +67,11 @@ nav {
 	}
 
 	a {
-		color: $mycolor;
+		color: $darkpurple;
 		font-weight: 500;
 
 		&:hover {
-			color: $secondarycolor;
+			color: $lightblue;
 		}
 	}
 }
@@ -36,13 +83,13 @@ nav {
 #main-menu li:last-child a {
 	color: white;
 	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .2));
-	background-color: $secondarycolor;
+	background-color: $lightblue;
 	border-radius: 3px;
 	@include defaultTransition(background-color);
 
 	&:hover {
 		background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .2));
-		background-color: $mycolor;
+		background-color: $darkpurple;
 		@include defaultTransition(background-color);
 	}
 }
@@ -53,7 +100,6 @@ nav {
 
 
 // Content
-
 .col-md.content-area {
 	padding: 0;
 }
@@ -69,7 +115,7 @@ nav {
 }
 
 .wrapper#wrapper-hero {
-	background-color: $mycolor;
+	background-color: $darkpurple;
 
 	display: flex;
 	flex-direction: column;
@@ -83,6 +129,98 @@ nav {
 	justify-content: center;
 }
 
+// front page latest posts
+
+.twd-latest-posts {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 1rem;
+
+	h3 {
+		text-align: center;
+		margin-top: 1rem;
+		color: $darkpurple;
+	}
+}
+
+// front page about
+
+.twd-about {
+	width: 100vw;
+	background: $darkpurple;
+	min-height: 700px;
+
+	@include screen-range(991px, 490px) {
+		min-height: 1000px;
+	}
+
+	.container {
+		height: 90vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transform: translateY(2rem);
+
+		section h2 {
+			color: white;
+			margin-bottom: 2rem;
+		}
+
+		@include screen-range(991px, 490px) {
+			transform: translateY(2rem);
+		}
+
+		@include screen-max($breakpoint-tablet) {
+			flex-direction: column;
+			justify-content: center;
+			transform: translateY(0rem);
+
+			section {
+				margin: 2rem 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			section h2 {
+				font-size: 2rem;
+				text-align: center;
+			}
+		}
+	}
+
+	.about.btn-primary {
+		background-color: $darkblue;
+		border: 1px solid $darkblue;
+	}
+
+	.profile-pic img {
+		border-radius: 50%;
+	}
+
+
+}
+
+// front page services
+.twd-services {
+	margin-top: 13vw;
+
+	h3 {
+		text-align: center;
+		color: $darkpurple;
+	}
+
+	.services {
+		display: flex;
+		justify-content: space-around;
+
+		@include screen-max($breakpoint-tablet) {
+			flex-direction: column;
+			justify-content: center;
+		}
+	}
+}
+
 .nav-links {
 	max-width: 850px;
 	margin: 0 auto;
@@ -94,11 +232,16 @@ nav {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-image: linear-gradient(140deg, $secondarydarker 0%, $secondarycolor 97%);
+	background-image: linear-gradient(140deg, $darkblue 0%, $lightblue 97%);
 	color: white;
 	height: 200px;
 	margin-bottom: 3rem;
 	text-align: center;
+}
+
+.entry-title {
+	text-align: center;
+	min-height: 56px;
 }
 
 .wp-post-image {
@@ -132,10 +275,10 @@ nav {
 	flex-direction: column;
 	align-items: center;
 	max-width: 400px;
-	padding: 2rem;
+	padding: 2rem 2rem 0 2rem;
 	border-radius: 5px;
 	box-shadow: 2px 4px 10px 0px rgba(159, 103, 183, .25);
-	margin: 2rem;
+	margin: 2rem 2rem 1rem 2rem;
 
 	.entry-header,
 	.entry-content {
@@ -150,7 +293,7 @@ nav {
 		font-size: 1.5rem !important;
 
 		a {
-			color: $secondarycolor;
+			color: $lightblue;
 		}
 	}
 
@@ -159,23 +302,50 @@ nav {
 		justify-content: center;
 
 		a {
-			background: $mycolor;
+			background: $darkpurple;
 			transition: background-color .2s ease-in-out;
 
 			&:hover {
-				background: $secondarycolor;
+				background: $lightblue;
 				transition: background-color .2s ease-in-out;
 			}
 		}
 	}
 }
 
+// Custom Dividers
+
+.divider.triangle {
+	position: absolute;
+	overflow: hidden;
+	border-left: 50vw solid transparent;
+	border-right: 50vw solid transparent;
+	border-top: 9vw solid white;
+}
+
+.divider.triangle.purple {
+	position: absolute;
+	overflow: hidden;
+	border-left: 50vw solid transparent;
+	border-right: 50vw solid transparent;
+	border-top: 9vw solid $darkpurple;
+}
+
+.divider.triangle.blue {
+	position: absolute;
+	overflow: hidden;
+	border-left: 50vw solid transparent;
+	border-right: 50vw solid transparent;
+	border-top: 9vw solid $darkblue;
+}
+
+
 
 // footer
 
 #wrapper-footer,
 #wrapper-footer-full {
-	background-image: linear-gradient(90deg, $secondarydarker 0%, $secondarycolor 97%);
+	background-image: linear-gradient(90deg, $darkblue 0%, $lightblue 97%);
 	color: white;
 }
 
@@ -210,6 +380,10 @@ h3.widget-title {
 	justify-content: space-between;
 	align-items: center;
 	height: 100%;
+
+	@include screen-max(767px) {
+		margin-bottom: 3rem;
+	}
 }
 
 .twd-social-links {
@@ -221,20 +395,9 @@ h3.widget-title {
 	padding: 0;
 }
 
-@media screen and (max-width: 767px) {
-	// .twdcard {
-	// 	width: 100%;
-	// }
-
-	.twd-copyright {
-		margin-bottom: 3rem;
-	}
-}
 
 @media screen and (max-width: 991px) {
-	h1 {
-		font-size: 1.5rem;
-	}
+
 
 	.site-main.twd-posts {
 		flex-direction: column;
@@ -245,5 +408,11 @@ h3.widget-title {
 	.entry-header.single {
 		height: 100px;
 	}
+
+	.twd-latest-posts {
+		flex-direction: column;
+		align-items: center;
+	}
+
 
 }

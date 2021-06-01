@@ -136,10 +136,10 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 				'name'          => __( 'Hero Canvas', 'understrap' ),
 				'id'            => 'herocanvas',
 				'description'   => __( 'Full size canvas hero area for Bootstrap and other custom HTML markup', 'understrap' ),
-				'before_widget' => '',
-				'after_widget'  => '',
-				'before_title'  => '',
-				'after_title'   => '',
+				'before_widget' => '<header class="twin-hero-canvas">',
+				'after_widget'  => '</header><!-- .twin-hero-canvas -->',
+				'before_title'  => '<h1 class="widget-title">',
+				'after_title'   => '</h1>',
 			)
 		);
 

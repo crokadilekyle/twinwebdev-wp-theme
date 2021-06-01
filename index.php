@@ -38,6 +38,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="row">
 
 			<!-- Do the left sidebar check and opens the primary div -->
+
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
 
 			<main class="site-main twd-posts" id="main">
