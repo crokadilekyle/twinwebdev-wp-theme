@@ -55,6 +55,7 @@ h2 {
 	align-items: center;
 	min-height: 25vh;
 	background-image: linear-gradient(140deg, $lightblue 0%, $darkblue 97%);
+	background-size: cover;
 	text-align: center;
 	color: white;
 }
@@ -140,6 +141,10 @@ nav {
 		text-align: center;
 		margin-top: 1rem;
 		color: $darkpurple;
+	}
+
+	.entry-content p:first-of-type {
+		min-height: 72px;
 	}
 }
 
