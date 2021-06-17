@@ -17,11 +17,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		<!-- <div class="entry-meta">
+		<div class="entry-meta">
 
-			<?php understrap_posted_on(); ?>
+			 Posted On: <?php echo esc_html(get_the_date()); ?> 
+			 <?php //understrap_posted_on(); ?> 
 
-		</div>.entry-meta -->
+		</div>
 
 	</header><!-- .entry-header -->
 
@@ -47,6 +48,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 						comments_template();
 					endif;
 					?>
+
+					<?php get_template_part( 'loop-templates/content', 'twitter' ); ?>
 
 				<?php endwhile; // end of the loop. ?>
 

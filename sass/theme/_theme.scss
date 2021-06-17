@@ -1,7 +1,7 @@
-$darkpurple: rgb(127, 83, 145);
+$darkpurple: #7f5391;
 $lightpurple: #AD81BF;
 $lightblue: #537791;
-$darkblue: #234762;
+$darkblue: rgb(35, 71, 98);
 
 $breakpoint-tablet: 991px;
 
@@ -43,7 +43,7 @@ h1 {
 
 h2 {
 	@include screen-max($breakpoint-tablet) {
-		font-size: 1rem;
+		font-size: 2rem;
 	}
 }
 
@@ -58,6 +58,13 @@ h2 {
 	background-size: cover;
 	text-align: center;
 	color: white;
+
+	.container h2 {
+		@include screen-max($breakpoint-tablet) {
+			font-size: 1rem;
+
+		}
+	}
 }
 
 // Navigation
@@ -128,6 +135,7 @@ nav {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	width: 100%;
 }
 
 // front page latest posts
@@ -226,6 +234,71 @@ nav {
 	}
 }
 
+// Single Post
+.twd-featured-image {
+	position: relative;
+
+	figcaption {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		color: white;
+		max-width: 640px;
+		margin: 0 auto;
+		background-image: linear-gradient(to top, rgba(35, 71, 98, .3), rgba(35, 71, 98, 0));
+
+		a {
+			color: white;
+		}
+
+	}
+}
+
+.twitter-comments {
+	text-align: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 3rem 0;
+	padding: 2rem;
+	position: relative;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		left: 0px;
+		background-color: #fff;
+		opacity: .75;
+	}
+
+	h3 {
+		color: $darkpurple;
+		position: relative;
+		z-index: 2;
+	}
+
+	p {
+		color: $darkblue;
+		margin-bottom: 0;
+		font-size: 18px;
+		font-weight: 600;
+		position: relative;
+		z-index: 2;
+	}
+
+	.twitter-handle {
+		color: $darkpurple;
+	}
+}
+
 .nav-links {
 	max-width: 850px;
 	margin: 0 auto;
@@ -272,8 +345,63 @@ nav {
 	max-width: 850px;
 	margin: 0 auto;
 	text-align: center;
-
 }
+
+.entry-content {
+	color: $darkblue;
+
+	h1,
+	h2,
+	h3 {
+		color: $darkblue;
+	}
+
+	h4,
+	h5,
+	h6 {
+		color: $darkpurple;
+	}
+
+	h2 {
+		margin-top: 96px;
+
+		@include screen-max($breakpoint-tablet) {
+			font-size: 2rem;
+		}
+	}
+
+	h3 {
+		margin-top: 32px;
+
+		@include screen-max($breakpoint-tablet) {
+			font-size: 1.5rem;
+		}
+	}
+
+	h4 {
+		margin: 8px 0 24px 0;
+
+		@include screen-max($breakpoint-tablet) {
+			font-size: 1.2rem;
+		}
+	}
+
+	p {
+		font-size: 18px;
+		line-height: 26px;
+	}
+
+	a {
+		color: $darkpurple;
+		font-weight: 600;
+	}
+
+	.btn {
+		color: white;
+		font-weight: 600;
+	}
+}
+
 
 .twdcard {
 	display: flex;
@@ -295,7 +423,11 @@ nav {
 	}
 
 	h2 {
-		font-size: 1.5rem !important;
+		font-size: 1.5rem;
+
+		@include screen-max($breakpoint-tablet) {
+			font-size: 1.3rem;
+		}
 
 		a {
 			color: $lightblue;
