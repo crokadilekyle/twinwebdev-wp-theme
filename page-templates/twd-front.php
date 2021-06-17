@@ -40,7 +40,12 @@ get_template_part( 'global-templates/hero' );
 								'numberposts' => 1,
 								'post_status' => 'publish'
 							]);
-							$post_query = new WP_Query($latest_post[0]['ID']);
+
+							$post_query_args = ["p" => $latest_post[0]["ID"]];
+
+						
+							$post_query = new WP_Query($post_query_args);
+
 							if ( $post_query->have_posts() ) : ?>
 
 								<?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>

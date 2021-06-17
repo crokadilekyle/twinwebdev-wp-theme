@@ -39,8 +39,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<!-- Do the left sidebar check and opens the primary div -->
 
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
-
 			<main class="site-main twd-posts" id="main">
 
 				<?php if ( have_posts() ) : ?>
@@ -72,8 +70,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<!-- The pagination component -->
 			<?php understrap_pagination(); ?>
 
-			<!-- Do the right sidebar check -->
-			<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
 
 		</div><!-- .row -->
 

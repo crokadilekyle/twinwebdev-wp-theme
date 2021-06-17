@@ -13,7 +13,14 @@ defined( 'ABSPATH' ) || exit;
 	
 	<div class="twd-single-post-container">
 
-		<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+		<figure class="twd-featured-image">
+
+			<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+			<?php if(get_post(get_post_thumbnail_id())->post_excerpt) : ?>
+			<figcaption><span><?php echo wp_kses(get_post(get_post_thumbnail_id())->post_excerpt, ['a' => ['href' => [] ] ]); ?></span></figcaption>
+			<?php endif; ?>
+
+		</figure>
 
 	</div>
 
@@ -44,7 +51,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<footer class="entry-footer">
 
-		<?php understrap_entry_footer(); ?>
+		<?php //understrap_entry_footer(); ?>
 
 	</footer><!-- .entry-footer -->
 
