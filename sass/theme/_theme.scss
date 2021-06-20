@@ -234,6 +234,82 @@ nav {
 	}
 }
 
+// About Page
+.twd-meet-the-developer {
+	background-color: $darkblue;
+	background-image: linear-gradient(23deg, $darkblue 70%, $lightblue 100%);
+	color: white;
+
+	@include screen-max($breakpoint-tablet) {
+		background: $darkblue;
+	}
+
+	article {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		align-items: center;
+		height: 75vh;
+		margin: 0 auto;
+		max-width: 1200px;
+
+		@include screen-max(1048px) {
+			flex-direction: column;
+			justify-content: center;
+			height: auto;
+		}
+
+		.twd-about-text {
+			max-width: 400px;
+			margin: 2rem 3rem 2rem 0;
+			text-align: center;
+
+			@include screen-max(1048px) {
+				margin-right: 0;
+			}
+
+			p {
+				text-align: left;
+				margin: 1rem;
+			}
+		}
+
+		.twd-about-image {
+
+			margin: -5rem 0 2rem;
+
+			img {
+				border-radius: 50%;
+			}
+
+		}
+
+		.twd-about-social {
+			max-width: 400px;
+			margin: 2rem 0;
+			text-align: center;
+		}
+
+		.twd-social-links {
+			margin: 1rem auto;
+
+			a {
+				color: white;
+			}
+		}
+	}
+}
+
+.twd-testimonials {
+	text-align: center;
+	color: $darkpurple;
+}
+
+.twd-toolbelt {
+	text-align: center;
+	background-color: $darkpurple;
+}
+
 // Single Post
 .twd-featured-image {
 	position: relative;
