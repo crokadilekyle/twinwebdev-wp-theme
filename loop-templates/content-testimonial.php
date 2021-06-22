@@ -7,9 +7,10 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+
 ?>
 
-<article <?php post_class('twd-testimonial'); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class(['twd-testimonial', $args['class']]); ?> id="post-<?php the_ID(); ?>">
 
     <div class="entry-content">
 
@@ -24,6 +25,6 @@ defined( 'ABSPATH' ) || exit;
     );
     ?>
 
-	</div><!-- .entry-content -->
+	</div>
 
-</article><!-- #post-## -->
+</article>

@@ -303,6 +303,53 @@ nav {
 .twd-testimonials {
 	text-align: center;
 	color: $darkpurple;
+	margin: 2rem 0;
+
+	.twd-testimonial-slider {
+		max-width: 850px;
+		position: relative;
+		overflow: hidden;
+		margin: 0 auto;
+		height: 50vh;
+		min-height: 700px;
+		display: flex;
+		align-items: center;
+	}
+
+	.twd-testimonial {
+		position: absolute;
+		left: 0;
+		right: 0;
+		opacity: 0;
+		transition: opacity .7s ease-in-out;
+	}
+
+	.twd-testimonial.active {
+		opacity: 1;
+		transition: opacity .7s ease-in-out;
+	}
+
+	img.wp-post-image {
+		margin-bottom: 1rem;
+	}
+
+	.carousel-link {
+		border: 3px solid $darkblue;
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		margin: 0 1rem;
+		transition: background-color .2s ease-in-out;
+		cursor: pointer;
+	}
+
+	.carousel-link.active {
+		background-color: $darkblue;
+		transition: background-color .2s ease-in-out;
+		cursor: pointer;
+	}
+
 }
 
 .twd-toolbelt {
