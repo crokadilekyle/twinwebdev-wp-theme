@@ -66,11 +66,13 @@ defined( 'ABSPATH' ) || exit;
 <script>
     const slide_links = Array.from(document.getElementsByClassName('carousel-link'));
     const testimonials = Array.from(document.getElementsByClassName('twd-testimonial'));
+    const carousel = document.querySelector('.twd-testimonial-slider');
+    let running;
 
     function testLoop(arr){
         let counter = 0;
         // Sets up timer to cycle through testimonials
-        setInterval(function timer(){
+        const timer = setInterval(function(){
             arr[counter].classList.remove('active');
             if (counter < arr.length - 1){
                 arr[counter + 1].classList.add('active');
@@ -88,42 +90,63 @@ defined( 'ABSPATH' ) || exit;
                     slide_links[link].classList.remove('active');
                 }
                 slide_links[0].classList.add('active');
+            }
+            if (running === false){
+                clearInterval(timer);
+            }
+        },15000);
+    }
+
+    // play carousel only when on screen
+    let options = {
+        threshold: .8
+    }
+
+    const startCarousel = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            let timer;
+            if (!entry.isIntersecting) {
+                running = false;
+                return;
+            } else {
+                running = true;
+                if (running === true){
+                    testLoop(testimonials);
+                }
+            }
+        })
+    }, options);
+
+    startCarousel.observe(carousel);
+
+    // Sets correct testimonial when clicking on nav link
+    slide_links.forEach(function(link, i, links){
+        link.addEventListener('click', function(e){
+
+            const selected = e.target.getAttribute('id');
+
+            for( const link in links) {
+                links[link].classList.remove('active');
+            }
+
+            for (const testimonial in testimonials) {
+                testimonials[testimonial].classList.remove('active');
+            }
+
+            e.target.classList.add('active');
+
+            for (const testimonial in testimonials) {
+                let id = testimonials[testimonial].getAttribute('id');
+                if (id == "post-"+selected){
+                    testimonials[testimonial].classList.add('active');
+                }
 
             }
-        },10000);
-    }
-    
-        testLoop(testimonials);
 
-
-        // Sets correct testimonial when clicking on nav link
-        slide_links.forEach(function(link, i, links){
-            link.addEventListener('click', function(e){
-
-                const selected = e.target.getAttribute('id');
-
-                for( const link in links) {
-                    links[link].classList.remove('active');
-                }
-
-                for (const testimonial in testimonials) {
-                    testimonials[testimonial].classList.remove('active');
-                }
-
-                e.target.classList.add('active');
-
-                for (const testimonial in testimonials) {
-                    let id = testimonials[testimonial].getAttribute('id');
-                    if (id == "post-"+selected){
-                        testimonials[testimonial].classList.add('active');
-                    }
-
-                }
-
-            });
         });
+    });
 
-
+        
 
 
 </script>

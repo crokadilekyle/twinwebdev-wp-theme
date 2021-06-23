@@ -31,21 +31,3 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 } // endif function_exists( 'understrap_scripts' ).
 
 add_action( 'wp_enqueue_scripts', 'understrap_scripts' );
-
-function twinwebdev_scripts() {
-    wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/835f14fa66.js', array(), '1.0.0', true );
-}
-add_action( 'wp_enqueue_scripts', 'twinwebdev_scripts' );
-
-add_filter( 'script_loader_tag', 'twinwebdev_add_attribs_to_scripts', 10, 3 );
-function twinwebdev_add_attribs_to_scripts( $tag, $handle, $src ) {
-
-	// The handles of the enqueued scripts we want to defer
-	$crossorigin = ['font-awesome'];
-
-	if ( in_array( $handle, $crossorigin ) ) {
-		return '<script type="text/javascript" src="' . $src . '" crossorigin="anonymous"></script>' . "\n";
-	}
-
-	return $tag;
-} 

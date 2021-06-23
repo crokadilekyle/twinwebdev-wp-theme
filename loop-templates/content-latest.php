@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 
 <section class="twd-latest-posts container">
-    <div class="latest-blog">
+    <div class="latest-blog show">
         <article> <!-- latest blog post -->
             <h3>Latest Blog Post</h3>
 
@@ -43,7 +43,7 @@ defined( 'ABSPATH' ) || exit;
 
         </article><!-- latest-post -->
     </div>
-    <div class="lastest-project">
+    <div class="lastest-project show">
         <article><!-- latest project post-->
             <h3>Latest Project</h3>
             

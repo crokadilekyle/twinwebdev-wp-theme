@@ -13,10 +13,10 @@ defined( 'ABSPATH' ) || exit;
     
 <article class="twd-about">
     <div class="container">
-        <section class="profile-pic">
+        <section class="profile-pic animate">
             <img src="<?php echo get_template_directory_uri(); ?>/img/kyle-duotone-blue.png" />
         </section>
-        <section >
+        <section class="animate">
             <h2>
                 Hello.  I'm Kyle.</br>
                 Full Stack Web Developer.</br>

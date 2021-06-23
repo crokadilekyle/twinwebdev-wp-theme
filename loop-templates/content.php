@@ -9,7 +9,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<article <?php post_class('twdcard'); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class(['twdcard', 'animate']); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
 
