@@ -20,6 +20,7 @@ $understrap_includes = array(
 	'/customizer.php',                      // Customizer additions.
 	'/twinwebdev-customizer.php',			// Twin Web Dev theme customizer additions.
 	'/twinwebdev-testimonials.php',			// Twin Web Dev theme testimonials custom post type.
+	'/twinwebdev-projects.php',				// Twin Web Dev theme projects custom post type.
 	'/twinwebdev-scripts.php',				// Twin Web Dev theme enqueue scripts
 	'/custom-comments.php',                 // Custom Comments file.
 	'/jetpack.php',                         // Load Jetpack compatibility file.
